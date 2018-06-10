@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="283d249b-ec15-434d-9bbd-9f5518e4ac10" name="Default" comment="" />
+    <list default="true" id="283d249b-ec15-434d-9bbd-9f5518e4ac10" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/KkvideoApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/KkvideoApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/HelloController.java" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/RegistLoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-api/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-api/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-api/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-api/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-api/target/classes/com/kkvideo/controller/HelloController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-api/target/kk-video-api-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-api/target/kk-video-api-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-common/target/kk-video-common-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-common/target/kk-video-common-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-dao/target/kk-video-dao-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-dao/target/kk-video-dao-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kk-video-pojo/target/kk-video-pojo-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/kk-video-pojo/target/kk-video-pojo-1.0-SNAPSHOT.jar" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/kk-video-common/target/" />
@@ -21,29 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="KkvideoApplication.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/KkvideoApplication.java">
+      <file leaf-file-name="Swagger2.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/Swagger2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="48">
-              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#256#257#0" expanded="true" />
-                <element signature="e#325#326#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HelloController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/HelloController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#365#366#0" expanded="true" />
-                <element signature="e#403#404#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="449">
+              <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
             </state>
           </provider>
         </entry>
@@ -53,9 +46,13 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -68,9 +65,25 @@
         <option value="$PROJECT_DIR$/kk-video-api/pom.xml" />
         <option value="$PROJECT_DIR$/kk-video-api/src/main/java/Application.java" />
         <option value="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/WeixinshopApplication.java" />
-        <option value="$PROJECT_DIR$/kk-video-api/src/main/resources/application.properties" />
-        <option value="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/KkvideoApplication.java" />
         <option value="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/HelloController.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/mapper/UsersFansMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-api/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/kk-video-common/src/main/java/com/kvideo/utils/FetchVideoCover.java" />
+        <option value="$PROJECT_DIR$/kk-video-common/src/main/java/com/kvideo/utils/MyMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/BgmMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/CommentsMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/SearchRecordsMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersFansMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersLikeVideosMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersReportMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/VideosMapper.java" />
+        <option value="$PROJECT_DIR$/kk-video-service/src/main/java/com/kkvideo/service/impl/UserServiceImpl.java" />
+        <option value="$PROJECT_DIR$/kk-video-service/src/main/java/com/kkvideo/service/UserService.java" />
+        <option value="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/Swagger2.java" />
+        <option value="$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/Users.java" />
+        <option value="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/KkvideoApplication.java" />
+        <option value="$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/RegistLoginController.java" />
       </list>
     </option>
   </component>
@@ -88,6 +101,22 @@
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="kk短视频" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="kk短视频" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
   <component name="MavenRunner">
     <option name="vmOptions" value="-DarchetypeCatalog=internal" />
   </component>
@@ -95,9 +124,13 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-120" />
+    <option name="x" value="537" />
+    <option name="y" value="532" />
     <option name="width" value="1200" />
-    <option name="height" value="935" />
+    <option name="height" value="915" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -147,24 +180,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="kkvideo" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="kkvideo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kkvideo" type="462c0819:PsiDirectoryNode" />
-              <item name="kk-video-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kkvideo" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="kkvideo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="kkvideo" type="462c0819:PsiDirectoryNode" />
-              <item name="kk-video-api" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -182,7 +197,7 @@
     <property name="RequestMappingsPanelWidth2" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="E:/tomcat/apache-tomcat-7.0.86/lib/servlet-api.jar!/" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/新版jimisun工具箱/框架/springboot/mybatis-generatorConfig" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -191,12 +206,20 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.import" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-dao\src\main\resources" />
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-api\src\main\resources" />
+    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.kvideo.utils" />
       <recent name="com.kkvideo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-api\src\main\resources" />
-      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-api\src\main\java" />
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-api\src\main\java\com\kkvideo" />
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-common\src\main\java" />
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-pojo\src\main\java\com\kkvideo\pojo" />
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-dao\src\main\resources\mapper" />
+      <recent name="E:\IntelliJIDEAWork\kkvideo\kk-video-dao\src\main\java\com\kkvideo\mapper" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -343,21 +366,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528628278006</updated>
-      <workItem from="1528628279880" duration="4545000" />
+      <workItem from="1528628279880" duration="12772000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4545000" />
+    <option name="totallyTimeSpent" value="12772000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
+    <frame x="430" y="426" width="960" height="732" extended-state="0" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" weight="0.32905984" />
-      <window_info anchor="bottom" id="Application Servers" />
-      <window_info anchor="right" id="Maven Projects" />
+      <window_info anchor="bottom" id="Application Servers" weight="0.3299712" />
+      <window_info anchor="right" id="Maven Projects" weight="0.3297587" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
@@ -367,15 +389,16 @@
       <window_info id="UI Designer" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="right" id="Palette&#9;" />
       <window_info id="Image Layers" />
       <window_info anchor="bottom" id="Java Enterprise" />
       <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Version Control" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.45221114" />
       <window_info anchor="bottom" id="Spring" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32952926" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.35920176" />
       <window_info anchor="bottom" id="Problems" />
       <window_info anchor="right" id="Bean Validation" />
       <window_info id="Web" side_tool="true" />
@@ -388,12 +411,52 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
+    <layout-to-restore>
+      <window_info anchor="bottom" id="Application Servers" order="0" weight="0.3299712" />
+      <window_info id="Designer" order="0" />
+      <window_info anchor="right" id="Palette" order="0" />
+      <window_info anchor="bottom" id="Spring" order="1" />
+      <window_info id="Image Layers" order="1" />
+      <window_info anchor="bottom" id="Run" order="11" weight="0.46219686" />
+      <window_info anchor="bottom" id="Cvs" order="13" weight="0.25" />
+      <window_info anchor="right" id="Ant Build" order="8" weight="0.25" />
+      <window_info id="UI Designer" order="2" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="2" weight="0.32952926" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info anchor="right" id="Capture Analysis" order="1" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="7" type="SLIDING" weight="0.4" />
+      <window_info anchor="bottom" id="Event Log" order="3" side_tool="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Messages" order="4" />
+      <window_info anchor="bottom" id="TODO" order="15" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="9" weight="0.25" />
+      <window_info anchor="bottom" id="Problems" order="5" />
+      <window_info anchor="bottom" id="Java Enterprise" order="6" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="right" id="Maven Projects" order="2" weight="0.3297587" />
+      <window_info anchor="bottom" id="Find" order="10" />
+      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.3226164" />
+      <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Message" order="9" />
+      <window_info id="Web" order="5" side_tool="true" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="14" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="12" weight="0.4" />
+      <window_info anchor="right" id="Bean Validation" order="6" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/kk-video-common/pom.xml">
@@ -458,33 +521,199 @@
     <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/resources/com/kkvideo/mapper/BgmMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-96" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/UsersFansExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/UsersExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/SearchRecordsExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/BgmExample.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/resources/application.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="36" column="43" lean-forward="true" selection-start-line="36" selection-start-column="43" selection-end-line="36" selection-end-column="43" />
+        <state relative-caret-position="241">
+          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-common/src/main/java/com/kvideo/utils/FetchVideoCover.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/resources/mapper/BgmMapper.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/Bgm.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/Comments.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/SearchRecords.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/Videos.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/UsersFans.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/UsersLikeVideos.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/UsersReport.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-common/src/main/java/com/kvideo/utils/MyMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/BgmMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="3" column="33" lean-forward="true" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/CommentsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/SearchRecordsMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersFansMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersLikeVideosMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/UsersReportMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-dao/src/main/java/com/kkvideo/mapper/VideosMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="64">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-common/src/main/java/org/n3r/idworker/utils/Ip.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-service/src/main/java/com/kkvideo/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="38" column="24" selection-start-line="38" selection-start-column="24" selection-end-line="38" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-service/src/main/java/com/kkvideo/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-pojo/src/main/java/com/kkvideo/pojo/Users.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="416">
+          <caret line="57" column="36" selection-start-line="57" selection-start-column="36" selection-end-line="57" selection-end-column="36" />
+          <folding>
+            <element signature="e#1005#1006#0" expanded="true" />
+            <element signature="e#1030#1031#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1127#1128#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/KkvideoApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="48">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+        <state relative-caret-position="208">
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#256#257#0" expanded="true" />
-            <element signature="e#325#326#0" expanded="true" />
+            <element signature="e#365#366#0" expanded="true" />
+            <element signature="e#434#435#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/HelloController.java">
+    <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/controller/RegistLoginController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="16" column="31" selection-start-line="16" selection-start-column="31" selection-end-line="16" selection-end-column="31" />
+        <state relative-caret-position="267">
+          <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#365#366#0" expanded="true" />
-            <element signature="e#403#404#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kk-video-api/src/main/java/com/kkvideo/Swagger2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="449">
+          <caret line="65" lean-forward="true" selection-start-line="65" selection-end-line="65" />
         </state>
       </provider>
     </entry>
