@@ -1,4 +1,4 @@
-package com.kvideo.utils;
+package com.kkvideo.utils;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

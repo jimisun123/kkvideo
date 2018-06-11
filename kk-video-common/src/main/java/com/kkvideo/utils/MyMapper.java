@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 
-package com.kvideo.utils;
+package com.kkvideo.utils;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

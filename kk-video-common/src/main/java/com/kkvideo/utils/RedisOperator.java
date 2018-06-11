@@ -1,4 +1,4 @@
-package com.kvideo.utils;
+package com.kkvideo.utils;
 
 import java.util.Map;
 import java.util.Set;

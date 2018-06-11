@@ -1,4 +1,4 @@
-package com.kvideo.utils;
+package com.kkvideo.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
