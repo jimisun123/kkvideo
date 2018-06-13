@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
 
         String userid = sid.nextShort();
         users.setId(userid);
-        usersMapper.insert(users);
+        usersMapper.insertSelective(users);
 
     }
 
