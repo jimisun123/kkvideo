@@ -8,11 +8,13 @@ import com.kkvideo.service.VideoService;
 import com.kkvideo.utils.FetchVideoCover;
 import com.kkvideo.utils.KkJsonResult;
 import com.kkvideo.utils.MergeVideoMp3;
+import com.kkvideo.utils.PagedResult;
 import io.swagger.annotations.*;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -70,8 +72,8 @@ public class VideoController extends BasicController {
         // 文件保存的命名空间
 //		String fileSpace = "C:/imooc_videos_dev";
         // 保存到数据库中的相对路径
-        String uploadPathDB = "/" + userId + "/video";
-        String coverPathDB = "/" + userId + "/video";
+        String uploadPathDB = "/resource/" + userId + "/video";
+        String coverPathDB = "/resource/" + userId + "/video";
 
         FileOutputStream fileOutputStream = null;
         InputStream inputStream = null;
@@ -92,7 +94,7 @@ public class VideoController extends BasicController {
 
                 if (StringUtils.isNotBlank(fileName)) {
 
-                    finalVideoPath = FILE_SPACE + "/resource/"+uploadPathDB + "/" + fileName;
+                    finalVideoPath = FILE_SPACE +uploadPathDB + "/" + fileName;
                     // 设置数据库保存的路径
                     uploadPathDB += ("/" + fileName);
                     coverPathDB = coverPathDB + "/" + fileNamePrefix + ".jpg";
@@ -127,13 +129,14 @@ public class VideoController extends BasicController {
         if (StringUtils.isNotBlank(bgmId)) {
             Bgm bgm = bgmService.queryBgmById(bgmId);
             String mp3InputPath = FILE_SPACE + bgm.getPath();
+            System.out.println(mp3InputPath);
 
             MergeVideoMp3 tool = new MergeVideoMp3(FFMPEG_EXE);
             String videoInputPath = finalVideoPath;
 
             String videoOutputName = UUID.randomUUID().toString() + ".mp4";
-            uploadPathDB = "" + userId + "/video" + "/" + videoOutputName;
-            finalVideoPath = FILE_SPACE +"/resource/"+ uploadPathDB;
+            uploadPathDB = "/resource/" + userId + "/video" + "/" + videoOutputName;
+            finalVideoPath = FILE_SPACE + uploadPathDB;
             tool.convertor(mp3InputPath,videoInputPath , videoSeconds, finalVideoPath);
         }
         System.out.println("uploadPathDB=" + uploadPathDB);
@@ -181,7 +184,7 @@ public class VideoController extends BasicController {
         }
 
         // 保存到数据库中的相对路径
-        String uploadPathDB = "/" + userId + "/video";
+        String uploadPathDB = "/resource/" + userId + "/video";
 
         FileOutputStream fileOutputStream = null;
         InputStream inputStream = null;
@@ -193,7 +196,7 @@ public class VideoController extends BasicController {
                 String fileName = file.getOriginalFilename();
                 if (StringUtils.isNotBlank(fileName)) {
 
-                    finalCoverPath = FILE_SPACE +"/resource/"+ uploadPathDB + "/" + fileName;
+                    finalCoverPath = FILE_SPACE + uploadPathDB + "/" + fileName;
                     // 设置数据库保存的路径
                     uploadPathDB += ("/" + fileName);
 
@@ -225,6 +228,40 @@ public class VideoController extends BasicController {
 
         return KkJsonResult.ok();
     }
+
+    /**
+     *
+     * @Description: 分页和搜索查询视频列表
+     * isSaveRecord：1 - 需要保存
+     * 				 0 - 不需要保存 ，或者为空的时候
+     */
+    @PostMapping(value="/showAll")
+    public KkJsonResult showAll(@RequestBody Videos video, Integer isSaveRecord,
+                                   Integer page, Integer pageSize) throws Exception {
+
+        if (page == null) {
+            page = 1;
+        }
+
+        if (pageSize == null) {
+            pageSize = PAGE_SIZE;
+        }
+
+        PagedResult result = videoService.getAllVideos(video, isSaveRecord, page, pageSize);
+        return KkJsonResult.ok(result);
+    }
+
+    /**
+     *获取热搜词
+     * @return
+     * @throws Exception
+     */
+    @PostMapping(value="/hot")
+    public KkJsonResult hot() throws Exception {
+        return KkJsonResult.ok(videoService.getHotwords());
+    }
+
+
 
 
 

@@ -7,5 +7,10 @@
     -->
     <id column="id" property="id" jdbcType="VARCHAR" />
     <result column="content" property="content" jdbcType="VARCHAR" />
+
   </resultMap>
+
+  <select id="getHotwords" resultType="String">
+  	select content from search_records group by content order by count(content) desc
+  </select>
 </mapper>

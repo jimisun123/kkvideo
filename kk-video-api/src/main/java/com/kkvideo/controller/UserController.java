@@ -40,7 +40,7 @@ public class UserController extends BasicController {
 		// 文件保存的命名空间
 		String fileSpace = "E:\\worktest\\kkvideo";
 		// 保存到数据库中的相对路径
-		String uploadPathDB = "/" + userId + "/face";
+		String uploadPathDB = "/resource/" + userId + "/face";
 		
 		FileOutputStream fileOutputStream = null;
 		InputStream inputStream = null;
@@ -50,10 +50,10 @@ public class UserController extends BasicController {
 				String fileName = files[0].getOriginalFilename();
 				if (StringUtils.isNotBlank(fileName)) {
 					// 文件上传的最终保存路径
-					String finalFacePath = fileSpace +"/resource/"+ uploadPathDB + "/" + fileName;
+					String finalFacePath = fileSpace + uploadPathDB + "/" + fileName;
 					// 设置数据库保存的路径
 					uploadPathDB += ("/" + fileName);
-					
+
 					File outFile = new File(finalFacePath);
 					if (outFile.getParentFile() != null || !outFile.getParentFile().isDirectory()) {
 						// 创建父文件夹
