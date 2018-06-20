@@ -1,8 +1,10 @@
 package com.kkvideo.controller;
 
 import com.kkvideo.pojo.Users;
+import com.kkvideo.pojo.UsersReport;
 import com.kkvideo.service.UserService;
 import com.kkvideo.utils.KkJsonResult;
+import com.kkvideo.vo.PublisherVideo;
 import com.kkvideo.vo.UsersVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -100,10 +102,94 @@ public class UserController extends BasicController {
 		UsersVo userVO = new UsersVo();
 		BeanUtils.copyProperties(userInfo, userVO);
 
-		/*userVO.setFollow(userService.queryIfFollow(userId, fanId));*/
+		userVO.setFollow(userService.queryIfFollow(userId, fanId));
+
 		return KkJsonResult.ok(userVO);
 	}
 
+	/**
+	 * 进入视频详情页面查询用户是否已经喜欢此视频，查询发布者的信息（如头像等）
+	 * @param loginUserId
+	 * @param videoId
+	 * @param publishUserId
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/queryPublisher")
+	public KkJsonResult queryPublisher(String loginUserId, String videoId,
+										  String publishUserId) throws Exception {
+
+		if (StringUtils.isBlank(publishUserId)) {
+			return KkJsonResult.errorMsg("");
+		}
+
+		// 1. 查询视频发布者的信息
+		Users userInfo = userService.queryUserInfo(publishUserId);
+		UsersVo publisher = new UsersVo();
+		BeanUtils.copyProperties(userInfo, publisher);
+
+		// 2. 查询当前登录者和视频的点赞关系
+		boolean userLikeVideo = userService.isUserLikeVideo(loginUserId, videoId);
+
+		PublisherVideo bean = new PublisherVideo();
+		bean.setPublisher(publisher);
+		bean.setUserLikeVideo(userLikeVideo);
+
+		return KkJsonResult.ok(bean);
+	}
+
+	/**
+	 * 关注用户
+	 * @param userId
+	 * @param fanId
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/beyourfans")
+	public KkJsonResult beyourfans(String userId, String fanId) throws Exception {
+
+		if (StringUtils.isBlank(userId) || StringUtils.isBlank(fanId)) {
+			return KkJsonResult.errorMsg("");
+		}
+
+		userService.saveUserFanRelation(userId, fanId);
+
+		return KkJsonResult.ok("关注成功...");
+	}
+
+	/**
+	 * 取消关注某个用户
+	 * @param userId
+	 * @param fanId
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/dontbeyourfans")
+	public KkJsonResult dontbeyourfans(String userId, String fanId) throws Exception {
+
+		if (StringUtils.isBlank(userId) || StringUtils.isBlank(fanId)) {
+			return KkJsonResult.errorMsg("");
+		}
+
+		userService.deleteUserFanRelation(userId, fanId);
+
+		return KkJsonResult.ok("取消关注成功...");
+	}
+
+	/**
+	 * 举报某个用户的视频
+	 * @param usersReport
+	 * @return
+	 * @throws Exception
+	 */
+	@PostMapping("/reportUser")
+	public KkJsonResult reportUser(@RequestBody UsersReport usersReport) throws Exception {
+
+		// 保存举报信息
+		userService.reportUser(usersReport);
+
+		return KkJsonResult.errorMsg("举报成功...有你平台变得更美好...");
+	}
 
 
 

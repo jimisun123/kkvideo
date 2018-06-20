@@ -3,8 +3,7 @@ package com.kkvideo.vo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModelProperty;
 
-import javax.persistence.Column;
-import javax.persistence.Id;
+
 
 /**
  * @Author:jimisun
@@ -23,6 +22,12 @@ public class UsersVo {
      */
     @ApiModelProperty(hidden = true)
     private String userToken;
+
+    /**
+     * 用户的Token
+     */
+    @ApiModelProperty(hidden = true)
+    private boolean isFollow;
 
     /**
      * 用户名
@@ -213,5 +218,13 @@ public class UsersVo {
 
     public void setUserToken(String userToken) {
         this.userToken = userToken;
+    }
+
+    public boolean isFollow() {
+        return isFollow;
+    }
+
+    public void setFollow(boolean follow) {
+        isFollow = follow;
     }
 }

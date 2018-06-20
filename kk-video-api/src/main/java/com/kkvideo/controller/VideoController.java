@@ -261,6 +261,79 @@ public class VideoController extends BasicController {
         return KkJsonResult.ok(videoService.getHotwords());
     }
 
+    /**
+     * 喜欢某个视频
+     * @param userId
+     * @param videoId
+     * @param videoCreaterId
+     * @return
+     * @throws Exception
+     */
+    @PostMapping(value="/userLike")
+    public KkJsonResult userLike(String userId, String videoId, String videoCreaterId)
+            throws Exception {
+        videoService.userLikeVideo(userId, videoId, videoCreaterId);
+        return KkJsonResult.ok();
+    }
+
+    /**
+     * 取消喜欢某个视频
+     * @param userId
+     * @param videoId
+     * @param videoCreaterId
+     * @return
+     * @throws Exception
+     */
+    @PostMapping(value="/userUnLike")
+    public KkJsonResult userUnLike(String userId, String videoId, String videoCreaterId) throws Exception {
+        videoService.userUnLikeVideo(userId, videoId, videoCreaterId);
+        return KkJsonResult.ok();
+    }
+
+    /**
+     * @Description: 我收藏(点赞)过的视频列表
+     */
+    @PostMapping("/showMyLike")
+    public KkJsonResult showMyLike(String userId, Integer page, Integer pageSize) throws Exception {
+
+        if (StringUtils.isBlank(userId)) {
+            return KkJsonResult.ok();
+        }
+
+        if (page == null) {
+            page = 1;
+        }
+
+        if (pageSize == null) {
+            pageSize = 6;
+        }
+
+        PagedResult videosList = videoService.queryMyLikeVideos(userId, page, pageSize);
+
+        return KkJsonResult.ok(videosList);
+    }
+
+    /**
+     * @Description: 我关注的人发的视频
+     */
+    @PostMapping("/showMyFollow")
+    public KkJsonResult showMyFollow(String userId, Integer page) throws Exception {
+
+        if (StringUtils.isBlank(userId)) {
+            return KkJsonResult.ok();
+        }
+
+        if (page == null) {
+            page = 1;
+        }
+
+        int pageSize = 6;
+
+        PagedResult videosList = videoService.queryMyFollowVideos(userId, page, pageSize);
+
+        return KkJsonResult.ok(videosList);
+    }
+
 
 
 

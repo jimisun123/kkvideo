@@ -4,6 +4,7 @@ com\kkvideo\pojo\SearchRecords.class
 com\kkvideo\pojo\UsersFans.class
 com\kkvideo\pojo\Bgm.class
 com\kkvideo\pojo\UsersLikeVideos.class
+com\kkvideo\vo\PublisherVideo.class
 com\kkvideo\vo\UsersVo.class
 com\kkvideo\pojo\UsersReport.class
 com\kkvideo\pojo\Videos.class
