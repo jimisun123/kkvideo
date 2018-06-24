@@ -5,7 +5,7 @@
 <!-- BEGIN HEAD -->
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>小慕短视频后台管理系统</title>
+    <title>KK短视频后台管理系统</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport"/>
 

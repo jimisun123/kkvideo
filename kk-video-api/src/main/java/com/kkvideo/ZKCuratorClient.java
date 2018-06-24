@@ -4,7 +4,6 @@ import com.kkvideo.cofig.ResourceConfig;
 import com.kkvideo.enums.BGMOperatorTypeEnum;
 import com.kkvideo.utils.JsonUtils;
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang3.StringUtils;
 import org.apache.curator.RetryPolicy;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -19,7 +18,6 @@ import org.springframework.stereotype.Component;
 
 import java.io.File;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.Map;
 
 @Component
@@ -75,10 +73,9 @@ public class ZKCuratorClient {
 					String operatorType = map.get("operType");
 					String songPath = map.get("path");
 
-					String filePath = resourceConfig.getFileSpace()+File.separator+"bgm" + songPath;
-					log.info(filePath);
+					String filePath = resourceConfig.getFileSpace()+ songPath;
 
-					// 3. 定义下载的路径（播放url）
+/*					// 3. 定义下载的路径（播放url） bgm使用uuid避免中文乱码
 					String arrPath[] = songPath.split("\\\\");
 					String finalPath = "";
 					// 3.1 处理url的斜杠以及编码
@@ -87,8 +84,8 @@ public class ZKCuratorClient {
 							finalPath += "/";
 							finalPath += URLEncoder.encode(arrPath[i], "UTF-8") ;
 						}
-					}
-					String bgmUrl = resourceConfig.getBgmServer() + finalPath;
+					}*/
+					String bgmUrl = resourceConfig.getBgmServer() + songPath;
 					
 					if (operatorType.equals(BGMOperatorTypeEnum.ADD.type)) {
 						// 下载bgm到spingboot服务器

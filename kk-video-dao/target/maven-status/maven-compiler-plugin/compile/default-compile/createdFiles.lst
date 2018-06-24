@@ -1,0 +1,10 @@
+com\kkvideo\mapper\UsersMapper.class
+com\kkvideo\mapper\CommentsMapperCustom.class
+com\kkvideo\mapper\UsersReportMapper.class
+com\kkvideo\mapper\CommentsMapper.class
+com\kkvideo\mapper\SearchRecordsMapper.class
+com\kkvideo\mapper\UsersLikeVideosMapper.class
+com\kkvideo\mapper\VideosMapper.class
+com\kkvideo\mapper\BgmMapper.class
+com\kkvideo\mapper\VideosMapperCustom.class
+com\kkvideo\mapper\UsersFansMapper.class

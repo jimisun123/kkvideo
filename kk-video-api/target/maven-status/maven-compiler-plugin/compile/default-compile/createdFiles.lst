@@ -1,0 +1,13 @@
+com\kkvideo\cofig\ResourceConfig.class
+com\kkvideo\controller\VideoController.class
+com\kkvideo\controller\RegistLoginController.class
+com\kkvideo\ZKCuratorClient.class
+com\kkvideo\ZKCuratorClient$1.class
+com\kkvideo\controller\BasicController.class
+com\kkvideo\controller\BgmController.class
+com\kkvideo\interceptor\UserInterceptor.class
+com\kkvideo\WarStartApplication.class
+com\kkvideo\Swagger2.class
+com\kkvideo\controller\UserController.class
+com\kkvideo\WebMvcConfig.class
+com\kkvideo\Application.class

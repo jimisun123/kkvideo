@@ -57,13 +57,5 @@ public class MergeVideoMp3 {
 		
 	}
 
-	public static void main(String[] args) {
-		MergeVideoMp3 ffmpeg = new MergeVideoMp3("E:\\ffmpeg\\ffmpeg\\bin\\ffmpeg.exe");
-		try {
-			ffmpeg.convertor("D:\\muise.mp3", "D:\\test.mp4", 2.0, "D:\\这是通过java生产的视频.mp4");
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
 
 }

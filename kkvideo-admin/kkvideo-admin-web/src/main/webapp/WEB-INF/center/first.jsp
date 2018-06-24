@@ -19,7 +19,7 @@
 	    </ul>
 	</div>
 	
-	<h1 class="page-title"> 小慕短视频后台管理系统 </h1>
+	<h1 class="page-title"> KK短视频后台管理系统 </h1>
                         
 	<div class="clearfix"></div>
         
@@ -86,12 +86,12 @@
 	            <div class="portlet-title">
 	                <div class="caption">
 	                    <i class="icon-microphone font-dark hide"></i>
-	                    <span class="caption-subject bold font-dark uppercase"> 慕课网</span>
-	                    <span class="caption-helper">视频推荐</span>
+	                    <span class="caption-subject bold font-dark uppercase"> 简介</span>
+	                    <span class="caption-helper">活动</span>
 	                </div>
 	            </div>
 	            <div class="portlet-body ">
-	            	<div class="row ">
+	            	<%--<div class="row ">
 	                    <div class="col-md-4 ">
 	                        <img src="<%=request.getContextPath() %>/static/pages/img/course/springboot.jpg" width="233px" class="img-responsive"/>
 	                    </div>
@@ -106,7 +106,7 @@
 	                    <div class="col-md-8 " >
 	                    	<h4><a href="https://coding.imooc.com/class/201.html" target="_blank">《ZooKeeper分布式专题与Dubbo微服务入门》</a></h4>
 	                    </div>
-	                </div>
+	                </div>--%>
 	            </div>
 	        </div>
 	    </div>

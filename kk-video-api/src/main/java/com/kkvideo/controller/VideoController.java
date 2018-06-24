@@ -124,12 +124,10 @@ public class VideoController extends BasicController {
             String videoInputPath = finalVideoPath;
 
 
-            uploadPathDB = "/usersresource/" + userId + "/video" + "/" + videoOutputName;
+            uploadPathDB = "/usersresource/" + userId + "/video" + "/bgm" + videoOutputName;
             finalVideoPath = FILE_SPACE + uploadPathDB;
             tool.convertor(videoInputPath, mp3InputPath, videoSeconds, finalVideoPath);
         }
-        System.out.println("uploadPathDB=" + uploadPathDB);
-        System.out.println("finalVideoPath=" + finalVideoPath);
 
         // 对视频进行截图
         FetchVideoCover videoInfo = new FetchVideoCover(FFMPEG_EXE);

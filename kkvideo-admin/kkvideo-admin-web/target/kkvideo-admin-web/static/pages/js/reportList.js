@@ -30,6 +30,7 @@ var UsersReportsList = function () {
 		// 上下文对象路径
 		var hdnContextPath = $("#hdnContextPath").val();
 		var apiServer = $("#apiServer").val();
+		var apiSourceServer = $("#apiSourceServer").val();
 		debugger;
 		var jqGrid = $("#usersReportsList");  
         jqGrid.jqGrid({  
@@ -47,7 +48,7 @@ var UsersReportsList = function () {
                 { name: 'dealVideoId', index: 'dealVideoId', width: 30, sortable: false },
                 { name: 'videoPath', index: 'videoPath', width: 30, sortable: false,
                 	formatter:function(cellvalue, options, rowObject) {
-                		var src = apiServer + cellvalue;
+                		var src = apiSourceServer + cellvalue;
                 		var display = "<a href='" + src + "' target='_blank'>点我播放</a>"
 			    		return display;
 			    	}

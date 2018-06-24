@@ -7,6 +7,7 @@ import kkvideo.admin.utils.KkJsonResult;
 import kkvideo.admin.utils.PagedResult;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.n3r.idworker.Sid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
@@ -29,6 +30,9 @@ public class VideoController {
 
     @Value("${FILE_SPACE}")
     private String FILE_SPACE;
+
+    @Autowired
+    private Sid sid;
 
     @Autowired
     private VideoService videoService;
@@ -114,6 +118,9 @@ public class VideoController {
             if (files != null && files.length > 0) {
 
                 String fileName = files[0].getOriginalFilename();
+                String fileType = fileName.substring(fileName.lastIndexOf(".")+1);
+                String uuid = sid.nextShort();
+                fileName=uuid+"."+fileType;
                 if (StringUtils.isNotBlank(fileName)) {
                     // 文件上传的最终保存路径
                     String finalPath = FILE_SPACE + uploadPathDB + File.separator + fileName;
