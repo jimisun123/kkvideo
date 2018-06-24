@@ -1,0 +1,148 @@
+/* 此文件用于覆盖原css */
+
+/* *,  */
+body{font:14px/180% Arial,Lucida,Verdana,"microsoft yahei",Helvetica,sans-serif;}
+
+h1, h2, h3, h4, h5, h6, h7 {font:13px/180% Arial,Lucida,Verdana,"microsoft yahei",Helvetica,sans-serif;}
+
+/* .page-content-wrapper { */
+/* 	margin-top: -23px; */
+/* } */
+
+/* 必填项 */
+.field-required {
+	color: red;
+}
+
+
+/* .page-header .page-header-menu { */
+/*     background: #3c763d; */
+/* } */
+
+.page-header .page-header-menu .hor-menu .navbar-nav>li>a, .page-header .page-header-menu .hor-menu .navbar-nav>li>a>i {
+    color: #d6e8d5;
+}
+
+
+/** PC 常用尺寸 start **/
+@media screen and (max-width: 2059px) {
+	.page-header .page-header-menu {
+		background: #3c763d; 
+	}
+}
+
+@media screen and (max-width: 1809px) {
+	.page-header .page-header-menu {
+		background: #3c763d; 
+	}
+}
+
+@media screen and (max-width: 1559px) {
+	.page-header .page-header-menu {
+		background: #3c763d; 
+	}
+}
+
+@media screen and (max-width: 1309px) {
+	.page-header .page-header-menu {
+		background: #3c763d; 
+	}
+}
+
+@media screen and (max-width: 1059px) {
+	.page-header .page-header-menu {
+		background: #3c763d; 
+	}
+}
+
+@media screen and (max-width: 991px) {
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+	}
+	
+	.breadcrumb {
+		margin-top: 15px;	
+	}
+}
+
+@media screen and (max-width: 809px) {
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+	}
+}
+
+@media only screen and (max-width: 870px) {
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+	}
+}
+
+@media screen and (max-width: 520px){
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+	}
+}
+/** PC 常用尺寸 end **/
+
+@media (max-width: 767px) {
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+	}
+}
+
+@media (max-width: 568px) {
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+	}
+}
+
+@media (max-width: 320px) {
+	.page-header .page-header-menu {
+		background: #EFF3F8; 
+/* 		#EFF3F8 */
+	}
+}
+	
+
+
+.page-prefooter {
+    background: #3c763d;
+    color: #91b389;
+    padding: 15px 0;
+    clear: both;
+}
+
+.page-footer {
+    background: #104a06;
+    color: #91b389;
+}
+
+.page-prefooter h2 {
+	font-size: 18px;
+    color: #c1d8c7;
+}
+
+.footer-p-first-line {
+	font-size: 16px;
+}
+
+.footer-p-other-line {
+	line-height:25px;
+	font-size: 16px;
+}
+
+.page-prefooter a {
+    color: #abccb9;
+}
+
+
+.scroll-to-top > i {
+    color: #6ab98e;
+}
+
+
+.faq-content-1 .faq-section {
+    background-color: #fff;
+    padding: 5px 30px 30px;
+    margin-bottom: 30px;
+}

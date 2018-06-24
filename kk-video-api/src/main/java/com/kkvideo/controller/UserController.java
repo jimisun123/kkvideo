@@ -40,9 +40,10 @@ public class UserController extends BasicController {
 		}
 		
 		// 文件保存的命名空间
-		String fileSpace = "E:\\worktest\\kkvideo";
+		/*String fileSpace = "E:\\worktest\\kkvideo";*/
+		String fileSpace = FILE_SPACE;
 		// 保存到数据库中的相对路径
-		String uploadPathDB = "/resource/" + userId + "/face";
+		String uploadPathDB = "/usersresource/" + userId + "/face";
 		
 		FileOutputStream fileOutputStream = null;
 		InputStream inputStream = null;

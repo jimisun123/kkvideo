@@ -2,6 +2,7 @@ package com.kkvideo.controller;
 
 import com.kkvideo.enums.VideoStatusEnum;
 import com.kkvideo.pojo.Bgm;
+import com.kkvideo.pojo.Comments;
 import com.kkvideo.pojo.Videos;
 import com.kkvideo.service.BgmService;
 import com.kkvideo.service.VideoService;
@@ -9,7 +10,7 @@ import com.kkvideo.utils.FetchVideoCover;
 import com.kkvideo.utils.KkJsonResult;
 import com.kkvideo.utils.MergeVideoMp3;
 import com.kkvideo.utils.PagedResult;
-import io.swagger.annotations.*;
+import io.swagger.annotations.ApiParam;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,7 +32,6 @@ import java.util.UUID;
  * @Date:Created in 12:01 2018-06-12
  * @Modified By:
  */
-@Api(value = "视频相关业务的接口", tags = {"视频相关业务的controller"})
 @RestController
 @RequestMapping("/video")
 public class VideoController extends BasicController {
@@ -43,44 +43,39 @@ public class VideoController extends BasicController {
     private VideoService videoService;
 
 
-    @ApiOperation(value = "上传视频", notes = "上传视频的接口")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "userId", value = "用户id", required = true,
-                    dataType = "String", paramType = "form"),
-            @ApiImplicitParam(name = "bgmId", value = "背景音乐id", required = false,
-                    dataType = "String", paramType = "form"),
-            @ApiImplicitParam(name = "videoSeconds", value = "背景音乐播放长度", required = true,
-                    dataType = "String", paramType = "form"),
-            @ApiImplicitParam(name = "videoWidth", value = "视频宽度", required = true,
-                    dataType = "String", paramType = "form"),
-            @ApiImplicitParam(name = "videoHeight", value = "视频高度", required = true,
-                    dataType = "String", paramType = "form"),
-            @ApiImplicitParam(name = "desc", value = "视频描述", required = false,
-                    dataType = "String", paramType = "form")
-    })
+    /**
+     * 上传视频
+     * @param userId
+     * @param bgmId
+     * @param videoSeconds
+     * @param videoWidth
+     * @param videoHeight
+     * @param desc
+     * @param file
+     * @return
+     * @throws Exception
+     */
     @PostMapping(value = "/upload", headers = "content-type=multipart/form-data")
     public KkJsonResult upload(String userId,
                                String bgmId, double videoSeconds,
                                int videoWidth, int videoHeight,
                                String desc,
-                               @ApiParam(value = "短视频", required = true)
-                                       MultipartFile file) throws Exception {
+                               MultipartFile file) throws Exception {
         if (StringUtils.isBlank(userId)) {
             return KkJsonResult.errorMsg("用户id不能为空...");
         }
 
-        // 文件保存的命名空间
-//		String fileSpace = "C:/imooc_videos_dev";
-        // 保存到数据库中的相对路径
-        String uploadPathDB = "/resource/" + userId + "/video";
-        String coverPathDB = "/resource/" + userId + "/video";
+        String uploadPathDB = "/usersresource/" + userId + "/video";
+        String coverPathDB = "/usersresource/" + userId + "/video";
 
         FileOutputStream fileOutputStream = null;
         InputStream inputStream = null;
         // 文件上传的最终保存路径
         String finalVideoPath = "";
+        String videoOutputName = UUID.randomUUID().toString() + ".mp4";
         try {
             if (file != null) {
+
 
                 String fileName = file.getOriginalFilename();
                 // abc.mp4
@@ -89,15 +84,12 @@ public class VideoController extends BasicController {
                 for (int i = 0 ; i < arrayFilenameItem.length-1 ; i ++) {
                     fileNamePrefix += arrayFilenameItem[i];
                 }
-                // fix bug: 解决小程序端OK，PC端不OK的bug，原因：PC端和小程序端对临时视频的命名不同
-//				String fileNamePrefix = fileName.split("\\.")[0];
-
                 if (StringUtils.isNotBlank(fileName)) {
 
-                    finalVideoPath = FILE_SPACE +uploadPathDB + "/" + fileName;
+                    finalVideoPath = FILE_SPACE + uploadPathDB + "/" + videoOutputName;
                     // 设置数据库保存的路径
-                    uploadPathDB += ("/" + fileName);
-                    coverPathDB = coverPathDB + "/" + fileNamePrefix + ".jpg";
+                    uploadPathDB += ("/" + videoOutputName);
+                    coverPathDB = coverPathDB + "/" + videoOutputName + ".jpg";
 
                     File outFile = new File(finalVideoPath);
                     if (outFile.getParentFile() != null || !outFile.getParentFile().isDirectory()) {
@@ -122,22 +114,19 @@ public class VideoController extends BasicController {
                 fileOutputStream.close();
             }
         }
-
-
         // 判断bgmId是否为空，如果不为空，
         // 那就查询bgm的信息，并且合并视频，生产新的视频
         if (StringUtils.isNotBlank(bgmId)) {
             Bgm bgm = bgmService.queryBgmById(bgmId);
             String mp3InputPath = FILE_SPACE + bgm.getPath();
-            System.out.println(mp3InputPath);
 
             MergeVideoMp3 tool = new MergeVideoMp3(FFMPEG_EXE);
             String videoInputPath = finalVideoPath;
 
-            String videoOutputName = UUID.randomUUID().toString() + ".mp4";
-            uploadPathDB = "/resource/" + userId + "/video" + "/" + videoOutputName;
+
+            uploadPathDB = "/usersresource/" + userId + "/video" + "/" + videoOutputName;
             finalVideoPath = FILE_SPACE + uploadPathDB;
-            tool.convertor(mp3InputPath,videoInputPath , videoSeconds, finalVideoPath);
+            tool.convertor(videoInputPath, mp3InputPath, videoSeconds, finalVideoPath);
         }
         System.out.println("uploadPathDB=" + uploadPathDB);
         System.out.println("finalVideoPath=" + finalVideoPath);
@@ -166,13 +155,14 @@ public class VideoController extends BasicController {
 
     }
 
-    @ApiOperation(value="上传封面", notes="上传封面的接口")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name="userId", value="用户id", required=true,
-                    dataType="String", paramType="form"),
-            @ApiImplicitParam(name="videoId", value="视频主键id", required=true,
-                    dataType="String", paramType="form")
-    })
+    /**
+     * 上传视频封面
+     * @param userId
+     * @param videoId
+     * @param file
+     * @return
+     * @throws Exception
+     */
     @PostMapping(value="/uploadCover", headers="content-type=multipart/form-data")
     public KkJsonResult uploadCover(String userId,
                                        String videoId,
@@ -184,7 +174,7 @@ public class VideoController extends BasicController {
         }
 
         // 保存到数据库中的相对路径
-        String uploadPathDB = "/resource/" + userId + "/video";
+        String uploadPathDB = "/usersresource/" + userId + "/video";
 
         FileOutputStream fileOutputStream = null;
         InputStream inputStream = null;
@@ -332,6 +322,54 @@ public class VideoController extends BasicController {
         PagedResult videosList = videoService.queryMyFollowVideos(userId, page, pageSize);
 
         return KkJsonResult.ok(videosList);
+    }
+
+    /**
+     * 保存留言
+     * @param comment
+     * @param fatherCommentId
+     * @param toUserId
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/saveComment")
+    public KkJsonResult saveComment(@RequestBody Comments comment,
+                                       String fatherCommentId, String toUserId) throws Exception {
+
+        comment.setFatherCommentId(fatherCommentId);
+        comment.setToUserId(toUserId);
+
+        videoService.saveComment(comment);
+        return KkJsonResult.ok();
+    }
+
+    /**
+     * 通过videoId查询留言/分页
+     * @param videoId
+     * @param page
+     * @param pageSize
+     * @return
+     * @throws Exception
+     */
+    @PostMapping("/getVideoComments")
+    public KkJsonResult getVideoComments(String videoId, Integer page, Integer pageSize) throws Exception {
+
+        if (StringUtils.isBlank(videoId)) {
+            return KkJsonResult.ok();
+        }
+
+        // 分页查询视频列表，时间顺序倒序排序
+        if (page == null) {
+            page = 1;
+        }
+
+        if (pageSize == null) {
+            pageSize = 10;
+        }
+
+        PagedResult list = videoService.getAllComments(videoId, page, pageSize);
+
+        return KkJsonResult.ok(list);
     }
 
 

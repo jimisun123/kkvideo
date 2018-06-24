@@ -25,4 +25,10 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(userInterceptor()).addPathPatterns("/user/**").excludePathPatterns("/user/queryPublisher");
     }
+
+    @Bean(initMethod="init")
+    public ZKCuratorClient zkCuratorClient() {
+        return new ZKCuratorClient();
+    }
+
 }

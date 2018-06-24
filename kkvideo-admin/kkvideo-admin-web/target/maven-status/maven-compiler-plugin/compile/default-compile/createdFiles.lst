@@ -1,0 +1,5 @@
+kkvideo\admin\controller\PageController.class
+kkvideo\admin\controller\UserController.class
+kkvideo\admin\bean\AdminUser.class
+kkvideo\admin\interceptor\LoginInterceptor.class
+kkvideo\admin\controller\VideoController.class

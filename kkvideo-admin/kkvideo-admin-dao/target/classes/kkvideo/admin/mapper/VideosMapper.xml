@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kkvideo.admin.mapper.VideosMapper" >
+  <resultMap id="BaseResultMap" type="kkvideo.admin.pojo.Videos" >
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="user_id" property="userId" jdbcType="VARCHAR" />
+    <result column="audio_id" property="audioId" jdbcType="VARCHAR" />
+    <result column="video_desc" property="videoDesc" jdbcType="VARCHAR" />
+    <result column="video_path" property="videoPath" jdbcType="VARCHAR" />
+    <result column="video_seconds" property="videoSeconds" jdbcType="REAL" />
+    <result column="video_width" property="videoWidth" jdbcType="INTEGER" />
+    <result column="video_height" property="videoHeight" jdbcType="INTEGER" />
+    <result column="cover_path" property="coverPath" jdbcType="VARCHAR" />
+    <result column="like_counts" property="likeCounts" jdbcType="BIGINT" />
+    <result column="status" property="status" jdbcType="INTEGER" />
+    <result column="create_time" property="createTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    id, user_id, audio_id, video_desc, video_path, video_seconds, video_width, video_height, 
+    cover_path, like_counts, status, create_time
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="kkvideo.admin.pojo.VideosExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from videos
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from videos
+    where id = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from videos
+    where id = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="kkvideo.admin.pojo.VideosExample" >
+    delete from videos
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="kkvideo.admin.pojo.Videos" >
+    insert into videos (id, user_id, audio_id, 
+      video_desc, video_path, video_seconds, 
+      video_width, video_height, cover_path, 
+      like_counts, status, create_time
+      )
+    values (#{id,jdbcType=VARCHAR}, #{userId,jdbcType=VARCHAR}, #{audioId,jdbcType=VARCHAR}, 
+      #{videoDesc,jdbcType=VARCHAR}, #{videoPath,jdbcType=VARCHAR}, #{videoSeconds,jdbcType=REAL}, 
+      #{videoWidth,jdbcType=INTEGER}, #{videoHeight,jdbcType=INTEGER}, #{coverPath,jdbcType=VARCHAR}, 
+      #{likeCounts,jdbcType=BIGINT}, #{status,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="kkvideo.admin.pojo.Videos" >
+    insert into videos
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="userId != null" >
+        user_id,
+      </if>
+      <if test="audioId != null" >
+        audio_id,
+      </if>
+      <if test="videoDesc != null" >
+        video_desc,
+      </if>
+      <if test="videoPath != null" >
+        video_path,
+      </if>
+      <if test="videoSeconds != null" >
+        video_seconds,
+      </if>
+      <if test="videoWidth != null" >
+        video_width,
+      </if>
+      <if test="videoHeight != null" >
+        video_height,
+      </if>
+      <if test="coverPath != null" >
+        cover_path,
+      </if>
+      <if test="likeCounts != null" >
+        like_counts,
+      </if>
+      <if test="status != null" >
+        status,
+      </if>
+      <if test="createTime != null" >
+        create_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null" >
+        #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="audioId != null" >
+        #{audioId,jdbcType=VARCHAR},
+      </if>
+      <if test="videoDesc != null" >
+        #{videoDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="videoPath != null" >
+        #{videoPath,jdbcType=VARCHAR},
+      </if>
+      <if test="videoSeconds != null" >
+        #{videoSeconds,jdbcType=REAL},
+      </if>
+      <if test="videoWidth != null" >
+        #{videoWidth,jdbcType=INTEGER},
+      </if>
+      <if test="videoHeight != null" >
+        #{videoHeight,jdbcType=INTEGER},
+      </if>
+      <if test="coverPath != null" >
+        #{coverPath,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCounts != null" >
+        #{likeCounts,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="kkvideo.admin.pojo.VideosExample" resultType="java.lang.Integer" >
+    select count(*) from videos
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update videos
+    <set >
+      <if test="record.id != null" >
+        id = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.userId != null" >
+        user_id = #{record.userId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.audioId != null" >
+        audio_id = #{record.audioId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.videoDesc != null" >
+        video_desc = #{record.videoDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.videoPath != null" >
+        video_path = #{record.videoPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.videoSeconds != null" >
+        video_seconds = #{record.videoSeconds,jdbcType=REAL},
+      </if>
+      <if test="record.videoWidth != null" >
+        video_width = #{record.videoWidth,jdbcType=INTEGER},
+      </if>
+      <if test="record.videoHeight != null" >
+        video_height = #{record.videoHeight,jdbcType=INTEGER},
+      </if>
+      <if test="record.coverPath != null" >
+        cover_path = #{record.coverPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.likeCounts != null" >
+        like_counts = #{record.likeCounts,jdbcType=BIGINT},
+      </if>
+      <if test="record.status != null" >
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.createTime != null" >
+        create_time = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update videos
+    set id = #{record.id,jdbcType=VARCHAR},
+      user_id = #{record.userId,jdbcType=VARCHAR},
+      audio_id = #{record.audioId,jdbcType=VARCHAR},
+      video_desc = #{record.videoDesc,jdbcType=VARCHAR},
+      video_path = #{record.videoPath,jdbcType=VARCHAR},
+      video_seconds = #{record.videoSeconds,jdbcType=REAL},
+      video_width = #{record.videoWidth,jdbcType=INTEGER},
+      video_height = #{record.videoHeight,jdbcType=INTEGER},
+      cover_path = #{record.coverPath,jdbcType=VARCHAR},
+      like_counts = #{record.likeCounts,jdbcType=BIGINT},
+      status = #{record.status,jdbcType=INTEGER},
+      create_time = #{record.createTime,jdbcType=TIMESTAMP}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="kkvideo.admin.pojo.Videos" >
+    update videos
+    <set >
+      <if test="userId != null" >
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+      <if test="audioId != null" >
+        audio_id = #{audioId,jdbcType=VARCHAR},
+      </if>
+      <if test="videoDesc != null" >
+        video_desc = #{videoDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="videoPath != null" >
+        video_path = #{videoPath,jdbcType=VARCHAR},
+      </if>
+      <if test="videoSeconds != null" >
+        video_seconds = #{videoSeconds,jdbcType=REAL},
+      </if>
+      <if test="videoWidth != null" >
+        video_width = #{videoWidth,jdbcType=INTEGER},
+      </if>
+      <if test="videoHeight != null" >
+        video_height = #{videoHeight,jdbcType=INTEGER},
+      </if>
+      <if test="coverPath != null" >
+        cover_path = #{coverPath,jdbcType=VARCHAR},
+      </if>
+      <if test="likeCounts != null" >
+        like_counts = #{likeCounts,jdbcType=BIGINT},
+      </if>
+      <if test="status != null" >
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="kkvideo.admin.pojo.Videos" >
+    update videos
+    set user_id = #{userId,jdbcType=VARCHAR},
+      audio_id = #{audioId,jdbcType=VARCHAR},
+      video_desc = #{videoDesc,jdbcType=VARCHAR},
+      video_path = #{videoPath,jdbcType=VARCHAR},
+      video_seconds = #{videoSeconds,jdbcType=REAL},
+      video_width = #{videoWidth,jdbcType=INTEGER},
+      video_height = #{videoHeight,jdbcType=INTEGER},
+      cover_path = #{coverPath,jdbcType=VARCHAR},
+      like_counts = #{likeCounts,jdbcType=BIGINT},
+      status = #{status,jdbcType=INTEGER},
+      create_time = #{createTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
