@@ -17,6 +17,7 @@
         <module>kk-video-dao</module>
         <module>kk-video-service</module>
         <module>kk-video-api</module>
+        <module>kkvideo-admin</module>
     </modules>
 
 

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="kkvideoadmin" />
         <module name="kkvideoapi" />
         <module name="kkvideocommon" />
         <module name="kkvideodao" />
@@ -13,5 +14,8 @@
         <module name="kkvideoservice" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="kkvideoadmin" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

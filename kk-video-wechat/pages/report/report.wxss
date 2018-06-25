@@ -1,0 +1,50 @@
+page {
+    background-color: #0e0f1a;
+    /* background-color: red; */
+}
+
+.container-reason {
+    display: flex;
+    color: whitesmoke;
+    padding: 15px;
+    background-color: #161823;
+}
+
+.label {
+    /* margin-left: 15px; */
+    margin-right: 15px;
+    color: white;
+}
+
+.container-content {
+    margin-top: 10px;
+    color: whitesmoke;
+    padding: 15px;
+    background-color: #161823;
+}
+
+.content {
+    margin-top: 10px;
+    padding: 10px;
+    color: white;
+    background-color: #242630;
+    width: 95%;
+}
+
+.container-tips{
+    padding: 25px;
+    color: #56575e;
+    font-size: 15px;
+}
+
+.report-face{
+    width:12px;
+    height:13px;
+}
+
+.submitBtn {
+    width: 80%;
+    margin-top: 10px;
+    background-color: #fe2c55;
+    color: white;
+}

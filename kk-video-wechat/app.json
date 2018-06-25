@@ -1,0 +1,22 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/videoinfo/videoinfo",
+    "pages/videotest/videotest",
+    "pages/userLogin/login",
+    "pages/report/report",
+    "pages/mine/mine",
+    "pages/userRegist/regist",
+    
+    "pages/chooseBgm/chooseBgm",
+    "pages/searchVideo/searchVideo"
+    
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "十秒笑哈哈",
+    "navigationBarTextStyle": "black"
+  },
+  "debug": true
+}

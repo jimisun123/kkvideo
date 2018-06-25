@@ -1,0 +1,40 @@
+page {
+    height: 100%;
+} 
+
+.container {
+    display: flex;
+    margin-top: 20rpx; 
+     justify-content: space-around;   
+}
+
+.submitBtn {
+    width: 80%;
+    margin-top: 15px;
+}
+
+.gobackBtn {
+    width: 80%;
+    margin-top: 15px;
+}
+
+
+.loginLabel {
+    color: gray;
+    font-size: 15px;
+}
+
+.inputText {
+    float: right;
+    text-align: right;
+    margin-right: 22px;
+    margin-top: 11px;
+    font-size: 15px;
+}
+
+.inputView {
+    padding: 5px;
+    background-color: white;
+    line-height: 45px;
+    border: solid 1px whitesmoke;
+}

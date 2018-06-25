@@ -1,0 +1,30 @@
+<view>
+
+    <form bindsubmit='submitReport'>
+
+        <view class='container-reason'>
+            <label class='label'>举报理由:</label>
+            <picker name="reasonIndex" value="{{index}}" range="{{reportReasonArray}}" bindchange="changeMe">
+                <view class="picker">
+                    {{reasonType}}
+                </view>
+            </picker>
+        </view>
+
+        <view class='container-content'>
+            <label class='label'>举报描述（选填）:</label>
+            <textarea name="reasonContent" class='content' placeholder='请详细说明举报原因...'>
+            </textarea>
+        </view>
+
+        <view class='container-tips'>
+            <image src='../resource/images/report_face.png' class='report-face'></image>
+            收到举报后，我们会在12小时内处理，感谢您的举报，互联网环境因你更美好！~~
+        </view>
+
+        <view>
+            <button class="submitBtn" type="" form-type='submit'>提  交</button>
+        </view>
+
+    </form>
+</view>
