@@ -6,7 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="kkvideoadmin" />
+        <module name="kkvideo-admin-common" />
+        <module name="kkvideo-admin-dao" />
+        <module name="kkvideo-admin-pojo" />
+        <module name="kkvideo-admin-service" />
+        <module name="kkvideo-admin-web" />
         <module name="kkvideoapi" />
         <module name="kkvideocommon" />
         <module name="kkvideodao" />

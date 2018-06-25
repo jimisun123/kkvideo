@@ -126,7 +126,7 @@ public class VideoController extends BasicController {
 
             uploadPathDB = "/usersresource/" + userId + "/video" + "/bgm" + videoOutputName;
             finalVideoPath = FILE_SPACE + uploadPathDB;
-            tool.convertor(videoInputPath, mp3InputPath, videoSeconds, finalVideoPath);
+            tool.convertor(mp3InputPath,videoInputPath, videoSeconds, finalVideoPath);
         }
 
         // 对视频进行截图
